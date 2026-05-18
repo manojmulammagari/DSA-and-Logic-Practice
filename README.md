@@ -5,7 +5,7 @@ This repository serves as my tracker for mastering algorithms and improving prob
 
 ## 🗂 Structure
 
-- Each folder is a LeetCode problem by number and name. 
+- Each folder is a LeetCode problem by number and name.
 - Each contains the original problem statement and my solution in Python.
 
 <!---LeetCode Topics Start-->
