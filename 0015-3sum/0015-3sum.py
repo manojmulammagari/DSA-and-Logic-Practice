@@ -11,15 +11,15 @@ class Solution:
 
             while l<r:
                 v=n+nums[l]+nums[r]
-                if v>0:
-                    r-=1
-                elif v<0:
-                    l+=1
-                
-                else :
+                if v==0:
                     b.append([n,nums[l],nums[r]])
                     l+=1
                     while nums[l]==nums[l-1] and l<r:
                         l+=1
+                elif v<0:
+                    l+=1
+                
+                else :
+                    r-=1
 
         return b
