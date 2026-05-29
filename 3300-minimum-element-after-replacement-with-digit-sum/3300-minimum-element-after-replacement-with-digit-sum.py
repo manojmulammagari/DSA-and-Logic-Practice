@@ -1,3 +1,15 @@
 class Solution:
     def minElement(self, nums: List[int]) -> int:
-        return min(sum(int(d) for d in str(num)) for num in nums)
+        min_sum = float('inf')
+        
+        for num in nums:
+            digit_sum = 0
+            # Strip digits mathematically from right to left
+            while num > 0:
+                digit_sum += num % 10
+                num //= 10
+                
+            if digit_sum < min_sum:
+                min_sum = digit_sum
+                
+        return min_sum
