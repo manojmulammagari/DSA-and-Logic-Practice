@@ -8,6 +8,7 @@ class Solution:
             width = right - left
             
             # 1. Eliminate min() by calculating area inside the pointer check
+
             if height[left] < height[right]:
                 area = width * height[left]
                 left += 1
@@ -16,6 +17,7 @@ class Solution:
                 right -= 1
             
             # 2. Eliminate max() overhead using a pure comparison
+            
             if area > maxi:
                 maxi = area
                 
