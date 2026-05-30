@@ -3,17 +3,19 @@ class Solution:
         
         c={}
 
-        for i in strs:
+        for s in strs:
 
-          d="".join(sorted(i))
+            v="".join (sorted(s))
 
-          if d not in c:
-            c[d]=[]
+            if v not in c:
 
-          c[d].append(i)
+                c[v]=[]
 
+            c[v].append(s)
 
         return list(c.values())
-         
+
+          
+
 
 
