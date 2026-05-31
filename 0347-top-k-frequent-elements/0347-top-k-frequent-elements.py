@@ -6,8 +6,8 @@ class Solution:
 
         for n in nums:
             c[n]=1+c.get(n,0)
-        for n,c in c.items():
-            freq[c].append(n)
+        for n,b in c.items():
+            freq[b].append(n)
 
         res=[]
 
