@@ -1,19 +1,21 @@
+
 class Solution:
-    from collections import Counter
-    from collections import defaultdict
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        #9:25 -> 
-        #c = Counter(nums)
-        #return [x[0] for x in c.most_common(k)]
-        d = defaultdict(int)
-        # go through the loop and keep the dictionary
-        for el in nums:
-            d[el] +=1
-        #print(d)
-        ls = sorted(d.items(), key= lambda x: x[1], reverse=True)[:k]
-        #print(ls)
-        return [x[0] for x in ls]
+        c=  {}
+        freq=[[] for i in range(len(nums)+1)]
 
+        for n in nums:
+            c[n]=1+c.get(n,0)
+        for n,b in c.items():
+            freq[b].append(n)
 
-         
-         
+        res=[]
+
+        for i in range(len(freq)-1,0,-1):
+
+            for n in freq[i]:
+                res.append(n)
+                if len(res)==k:
+                    return res
+
+        
