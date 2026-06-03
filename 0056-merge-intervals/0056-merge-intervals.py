@@ -6,10 +6,10 @@ class Solution:
         merged = []
 
         for x in intervals:
-            if not merged or merged[-1][1] < x[0]:
+            if not merged or merged[-1][-1] < x[0]:
                 merged.append(x)
 
             else:
-                merged[-1][1] = max(merged[-1][1], x[1])
+                merged[-1][-1] = max(merged[-1][-1], x[1])
 
         return merged
