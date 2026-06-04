@@ -3,7 +3,6 @@ class Solution:
 
         intervals.sort(key = lambda x:x[0])
 
-
         merge=[]
 
         for x in intervals:
