@@ -9,7 +9,10 @@ class Solution:
 
             current_sum=current_sum-nums[i-k]+nums[i]
 
-            max_sum=max(max_sum,current_sum)
+            if current_sum > max_sum:
+
+                max_sum=current_sum
+
 
         return max_sum/k
 
