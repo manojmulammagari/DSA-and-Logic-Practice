@@ -4,6 +4,7 @@ class Solution:
         arr = Counter(nums)
 
         for i in arr:
+            
             if arr[i] == 1:
 
                 return i
