@@ -4,15 +4,15 @@ class Solution:
         if s is "" or t is "" or len(s) < len(t):
             return ""
 
-        tar_cou = Counter(t)
+        target_count = Counter(t)
 
-        uni = len(tar_cou)
+        unique = len(target_count)
 
         window = {}
 
         left = 0
 
-        form_char = 0
+        formed_char = 0
 
         min_len = len(s) + 1
 
@@ -22,15 +22,15 @@ class Solution:
 
         for right in range(len(s)):
 
-            cr = s[right]
+            char = s[right]
 
-            window[cr] = window.get(cr, 0) + 1
+            window[char] = window.get(char, 0) + 1
 
-            if cr in tar_cou and window[cr] == tar_cou[cr]:
+            if char in target_count and window[char] == target_count[char]:
 
-                form_char = form_char + 1
+                formed_char = formed_char + 1
 
-            while form_char == uni:
+            while formed_char == unique:
 
                 curlen = right - left + 1
 
@@ -44,9 +44,9 @@ class Solution:
 
                 window[charl] = window.get(charl, 0) - 1
 
-                if charl in tar_cou and window[charl] < tar_cou[charl]:
+                if charl in target_count and window[charl] < target_count[charl]:
 
-                    form_char = form_char - 1
+                    formed_char = formed_char - 1
 
                 left = left + 1
 
