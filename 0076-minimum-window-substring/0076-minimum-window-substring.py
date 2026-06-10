@@ -1,59 +1,48 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
 
-        if s is "" or t is "" or len(s) < len(t):
+        if s == "" or t == "" or len(s) < len(t):
+
             return ""
 
-        target_count = Counter(t)
-
-        unique = len(target_count)
-
+        t_count = Counter(t)
         window = {}
-
+        unique = len(t_count)
+        formed = 0
         left = 0
-
-        formed_char = 0
-
-        min_len = len(s) + 1
-
         bestleft = 0
-
         bestright = 0
+        minimum = len(s) + 1
 
         for right in range(len(s)):
+            ch = s[right]
 
-            char = s[right]
+            window[ch] = window.get(ch, 0) + 1
 
-            window[char] = window.get(char, 0) + 1
+            if ch in t_count and window[ch] == t_count[ch]:
+                formed += 1
 
-            if char in target_count and window[char] == target_count[char]:
+            while formed == unique:
 
-                formed_char = formed_char + 1
+                current_length = right - left + 1
 
-            while formed_char == unique:
-
-                curlen = right - left + 1
-
-                if curlen < min_len:
-
-                    min_len = curlen
+                if current_length < minimum:
+                    minimum = current_length
                     bestleft = left
                     bestright = right
 
-                charl = s[left]
+                char_left = s[left]
 
-                window[charl] = window.get(charl, 0) - 1
+                window[char_left] = window.get(char_left, 0) - 1
 
-                if charl in target_count and window[charl] < target_count[charl]:
+                if char_left in t_count and window[char_left] < t_count[char_left]:
 
-                    formed_char = formed_char - 1
+                    formed -= 1
 
-                left = left + 1
+                left += 1
 
-        if min_len == len(s) + 1:
-
+        if minimum == len(s)+1:
             return ""
 
         else:
-            
-            return s[bestleft : bestright + 1]
+            return s[bestleft:bestright +1]
