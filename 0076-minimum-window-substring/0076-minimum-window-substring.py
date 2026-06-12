@@ -41,11 +41,11 @@ class Solution:
 
                 left += 1
 
-        if minimum == len(s)+1:
+        if minimum == len(s) + 1:
             return ""
 
         else:
-            return s[bestleft:bestright +1]
+            return s[bestleft : bestright + 1]
 
         # if s == "" or t == "" or len(s) < len(t):
         #     return ""
