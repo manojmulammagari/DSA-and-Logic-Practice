@@ -6,12 +6,19 @@ class Solution:
             return ""
 
         t_count = Counter(t)
+
         window = {}
+
         unique = len(t_count)
+
         formed = 0
+
         left = 0
+
         bestleft = 0
+
         bestright = 0
+
         minimum = len(s) + 1
 
         for right in range(len(s)):
