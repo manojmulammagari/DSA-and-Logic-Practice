@@ -24,7 +24,7 @@ class Solution:
         for right in range(len(s)):
             ch = s[right]
 
-            window[ch] = window.get(ch, 0) + 1
+            window[ch] = 1 + window.get(ch, 0)
 
             if ch in t_count and window[ch] == t_count[ch]:
                 formed += 1
