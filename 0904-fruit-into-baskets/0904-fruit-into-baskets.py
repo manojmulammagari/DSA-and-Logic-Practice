@@ -6,11 +6,8 @@ class Solution:
         window = {}
 
         have = 0 
-        
-     
 
         for r in range(len(fruits)):
-
 
             c = fruits[r]
             # Add the current fruit to our window frequency map
