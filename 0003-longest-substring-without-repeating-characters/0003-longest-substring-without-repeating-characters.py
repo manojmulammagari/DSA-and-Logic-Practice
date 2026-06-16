@@ -1,6 +1,7 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         char_map = {}  # Stores the character and its most recent index position
+        
         left = 0
 
         maxlength = 0
