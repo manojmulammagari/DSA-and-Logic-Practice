@@ -20,6 +20,7 @@ class Solution:
         bestright = 0
 
         minimum = len(s) + 1
+        
 
         for right in range(len(s)):
             ch = s[right]
