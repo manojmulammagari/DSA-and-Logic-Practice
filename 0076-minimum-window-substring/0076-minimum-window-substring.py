@@ -4,7 +4,8 @@ class Solution:
         if s == "" or t == "" or len(s) < len(t):
 
             return ""
-
+                        
+                        
         t_count = Counter(t)
 
         window = {}
