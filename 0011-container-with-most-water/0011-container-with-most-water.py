@@ -16,5 +16,4 @@ class Solution:
                 right -= 1
             if area > max_area:
                 max_area = area
-
         return max_area
