@@ -11,9 +11,6 @@ class Solution:
 
             a[n]=i
 
-    
-
-
 
 
 
