@@ -4,10 +4,10 @@ class Solution:
         a = {}
 
         for i,n in enumerate(nums):
-            need = target - n
+            sub = target - n
 
-            if need in a:
-                return[a[need],i]
+            if sub in a:
+                return[a[sub],i]
 
             a[n] = i
 
