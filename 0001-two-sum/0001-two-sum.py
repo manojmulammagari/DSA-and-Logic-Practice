@@ -3,19 +3,13 @@ class Solution:
 
         a = {}
 
-        for i ,n in enumerate(nums):
-            complement= target-n
+        for i,n in enumerate(nums):
+            need = target - n
 
-            if complement in a:
-                return[a[complement],i]
+            if need in a:
+                return[a[need],i]
 
-            a[n]=i
-
-
-
-
-
-
+            a[n] = i
 
 
 
