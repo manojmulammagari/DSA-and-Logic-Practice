@@ -4,12 +4,9 @@ class Solution:
         a = {}
 
         for i,n in enumerate(nums):
-            sub = target - n
+            compliment  = target - n
 
-            if sub in a:
-                return[a[sub],i]
+            if compliment in a:
+                return[a[compliment],i]
 
             a[n] = i
-
-
-
