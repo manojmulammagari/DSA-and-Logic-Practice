@@ -3,13 +3,12 @@ class Solution:
         if x < 0:
             return False
 
-
-        origin = x 
+        original = x
         rev = 0
         while x > 0:
 
-            digit = x%10
-            rev = (rev*10)+digit
-            x = x//10
+            digit = x % 10
+            rev = (rev * 10) + digit
+            x = x // 10
 
-        return origin == rev
+        return original == rev
