@@ -14,4 +14,3 @@ class Solution:
 
     # Convert lists of characters into strings as required by the return type
     return ["".join(row) for row in grid]
-    return "3"
